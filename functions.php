@@ -35,20 +35,52 @@ function theme_register_nav_menu() {
 add_action( 'after_setup_theme', 'theme_register_nav_menu' );
 
 /**
- * CPT
+ * Taxonomy for CPT 'blog'
+ */
+add_action( 'init', 'create_taxonomy' );
+function create_taxonomy(){
+    register_taxonomy( 'blog', [ 'blog' ], [
+        'label'                 => '',
+        'labels'                => [
+            'name'              => 'Темы',
+            'singular_name'     => 'Тема',
+            'search_items'      => 'Поиск темы',
+            'all_items'         => 'Все темы',
+            'view_item '        => 'Показать тему',
+            'edit_item'         => 'Обновить тему ',
+            'update_item'       => 'Применить изменения',
+            'add_new_item'      => 'Добавить тему',
+            'new_item_name'     => 'Новое имя темы',
+            'back_to_items'     => '← Нахад к темам',
+        ],
+        'description'           => '', // описание таксономии
+        'public'                => true,
+        'hierarchical'          => true,
+        'rewrite'               => true,
+        'capabilities'          => array(),
+        'meta_box_cb'           => 'post_categories_meta_box',
+        'show_admin_column'     => true, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
+        'show_in_rest'          => null, // добавить в REST API
+        'rest_base'             => null,
+
+    ] );
+}
+
+/**
+ * CPT blog
  */
 function create_post_type() {
     register_post_type( 'blog',
         array(
             'labels' => array(
-                'name' => __( 'Блог' ),
+                'name' => __( 'Блоги' ),
                 'singular_name' => __( 'Блог' ),
                 'add_new' => __( 'Добавить блог' ),
             ),
             'menu_position' => 4,
             'public' => true,
             'has_archive' => true,
-            'supports' => [ 'title', 'editor', 'thumbnail', 'excerpt' ],
+            'supports' => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
             'menu_icon'   => 'dashicons-welcome-write-blog',
         )
     );

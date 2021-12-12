@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +26,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
 </head>
-<body>
+
 
 <!--Header-->
 
@@ -59,7 +58,7 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
                             <?php wp_nav_menu(['items_wrap' => '%3$s']); ?>
 <!--                            <li><a class="dropdown-item" href="#">Action</a></li>-->
@@ -91,3 +90,4 @@
             <!--            <a class="p-2 link-secondary" href="#">World</a>-->
     </div>
 </div>
+
