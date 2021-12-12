@@ -102,14 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 @media (min-width: 768px){
-  .col-md-6 {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-}
-@media (min-width: 768px){
   .h-md-250 {
     height: auto;
   }
-
 }
