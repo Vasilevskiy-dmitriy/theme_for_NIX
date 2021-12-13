@@ -1,0 +1,108 @@
+<?php
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+'key' => 'group_61b759e873b25',
+'title' => 'Мета для блога',
+'fields' => array(
+array(
+'key' => 'field_61b75a110ac13',
+'label' => 'Ожидаемое количество просмотров',
+'name' => 'Ожидаемое количество просмотров',
+'type' => 'select',
+'instructions' => 'Выберите количество',
+'required' => 0,
+'conditional_logic' => 0,
+'wrapper' => array(
+'width' => '',
+'class' => '',
+'id' => '',
+),
+'choices' => array(
+10000 => '10000',
+25000 => '25000',
+50000 => '50000',
+),
+'default_value' => 10000,
+'allow_null' => 0,
+'multiple' => 0,
+'ui' => 0,
+'return_format' => 'value',
+'ajax' => 0,
+'placeholder' => '',
+),
+array(
+'key' => 'field_61b75b45d1fea',
+'label' => 'Лимит слов',
+'name' => 'Лимит слов',
+'type' => 'select',
+'instructions' => 'Выберите количество',
+'required' => 0,
+'conditional_logic' => 0,
+'wrapper' => array(
+'width' => '',
+'class' => '',
+'id' => '',
+),
+'choices' => array(
+10000 => '10000',
+20000 => '20000',
+30000 => '30000',
+50000 => '50000',
+),
+'default_value' => false,
+'allow_null' => 0,
+'multiple' => 0,
+'ui' => 0,
+'return_format' => 'value',
+'ajax' => 0,
+'placeholder' => '',
+),
+array(
+'key' => 'field_61b75bfe70538',
+'label' => 'Актуальность записи',
+'name' => 'Актуальность записи',
+'type' => 'select',
+'instructions' => 'Выберите значение',
+'required' => 0,
+'conditional_logic' => 0,
+'wrapper' => array(
+'width' => '',
+'class' => '',
+'id' => '',
+),
+'choices' => array(
+'Высокая' => 'Высокая',
+'Средняя' => 'Средняя',
+'Низкая' => 'Низкая',
+),
+'default_value' => false,
+'allow_null' => 0,
+'multiple' => 0,
+'ui' => 0,
+'return_format' => 'value',
+'ajax' => 0,
+'placeholder' => '',
+),
+),
+'location' => array(
+array(
+array(
+'param' => 'post_type',
+'operator' => '==',
+'value' => 'blog',
+),
+),
+),
+'menu_order' => 0,
+'position' => 'normal',
+'style' => 'default',
+'label_placement' => 'top',
+'instruction_placement' => 'label',
+'hide_on_screen' => '',
+'active' => true,
+'description' => '',
+'show_in_rest' => 0,
+));
+
+endif;		

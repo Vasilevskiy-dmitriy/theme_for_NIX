@@ -82,7 +82,13 @@ function create_post_type() {
             'has_archive' => true,
             'supports' => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
             'menu_icon'   => 'dashicons-welcome-write-blog',
+            'show_in_rest' => true
         )
     );
 }
 add_action( 'init', 'create_post_type' );
+
+/**
+ *Config for ACF
+ */
+include 'config_acf.php';
