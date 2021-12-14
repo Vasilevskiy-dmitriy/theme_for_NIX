@@ -18,9 +18,13 @@
                         </div>
 
                     </div>
-                    <div class="col-auto d-none d-lg-block">
 
+                    <div class="col-auto d-none d-lg-block">
+                            <div class="position-sticky" style="top: 2rem;">
+                                <?php echo get_template_part( 'template-parts/filter/latest-added-blog' ); ?>
+                            </div>
                     </div>
+
                 </div>
             </div>
         <?php endwhile;?>

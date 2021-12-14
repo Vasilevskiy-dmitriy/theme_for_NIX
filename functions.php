@@ -1,4 +1,11 @@
 <?php
+/**
+ * Register CONST for lang-func
+ */
+$cur_theme = wp_get_theme();
+
+define( 'THEME_FN_VERSION', $cur_theme->get( 'Version' ) );
+define( 'THEME_FN_TEXT_DOMAIN', $cur_theme->get( 'TextDomain' ) );
 
 /**
  * Script_load
@@ -8,10 +15,10 @@ function load_style_script ()
     /**
      * Styles
      */
-    wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('bootstrap' , get_template_directory_uri() . '/assets/css/bootstrap.min.css');
-    wp_enqueue_style('blog' , get_template_directory_uri() . '/assets/css/blog.css');
-    wp_enqueue_style('navbar', get_template_directory_uri() . '/assets/css/navbar.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/style.css', THEME_FN_VERSION);
+    wp_enqueue_style('bootstrap' , get_template_directory_uri() . '/assets/css/bootstrap.min.css', THEME_FN_VERSION);
+    wp_enqueue_style('blog' , get_template_directory_uri() . '/assets/css/blog.css', THEME_FN_VERSION);
+    wp_enqueue_style('navbar', get_template_directory_uri() . '/assets/css/navbar.css', THEME_FN_VERSION);
 
     /**
      * Scripts
@@ -42,16 +49,16 @@ function create_taxonomy(){
     register_taxonomy( 'blog', [ 'blog' ], [
         'label'                 => '',
         'labels'                => [
-            'name'              => 'Темы',
-            'singular_name'     => 'Тема',
-            'search_items'      => 'Поиск темы',
-            'all_items'         => 'Все темы',
-            'view_item '        => 'Показать тему',
-            'edit_item'         => 'Обновить тему ',
-            'update_item'       => 'Применить изменения',
-            'add_new_item'      => 'Добавить тему',
-            'new_item_name'     => 'Новое имя темы',
-            'back_to_items'     => '← Нахад к темам',
+            'name'              => __( 'Темы', THEME_FN_TEXT_DOMAIN ),
+            'singular_name'     => __( 'Тема', THEME_FN_TEXT_DOMAIN ),
+            'search_items'      => __( 'Поиск темы', THEME_FN_TEXT_DOMAIN ),
+            'all_items'         => __( 'Все темы', THEME_FN_TEXT_DOMAIN ),
+            'view_item '        => __( 'Показать тему', THEME_FN_TEXT_DOMAIN ),
+            'edit_item'         => __( 'Обновить тему', THEME_FN_TEXT_DOMAIN ),
+            'update_item'       => __( 'Применить изменения', THEME_FN_TEXT_DOMAIN ),
+            'add_new_item'      => __( 'Добавить тему', THEME_FN_TEXT_DOMAIN ),
+            'new_item_name'     => __( 'Новое имя темы', THEME_FN_TEXT_DOMAIN ),
+            'back_to_items'     => __( '← Нахад к темам', THEME_FN_TEXT_DOMAIN ),
         ],
         'description'           => '', // описание таксономии
         'public'                => true,
@@ -73,9 +80,9 @@ function create_post_type() {
     register_post_type( 'blog',
         array(
             'labels' => array(
-                'name' => __( 'Блоги' ),
-                'singular_name' => __( 'Блог' ),
-                'add_new' => __( 'Добавить блог' ),
+                'name' => __( 'Блоги', THEME_FN_TEXT_DOMAIN ),
+                'singular_name' => __( 'Блог', THEME_FN_TEXT_DOMAIN ),
+                'add_new' => __( 'Добавить блог', THEME_FN_TEXT_DOMAIN ),
             ),
             'menu_position' => 4,
             'public' => true,
@@ -92,3 +99,42 @@ add_action( 'init', 'create_post_type' );
  *Config for ACF
  */
 include 'config_acf.php';
+
+/**
+ * Filter for blog
+ */
+function modify_archive_movie_query( WP_Query $query ) {
+    if ( is_admin() || ! $query->is_post_type_archive( 'blog' ) || ! $query->is_main_query() ) {
+        return;
+    }
+
+    $search        = filter_input( INPUT_GET, 'filter_search', FILTER_SANITIZE_STRING );
+    $filter_views   = filter_input( INPUT_GET, 'filter_views', FILTER_VALIDATE_INT );
+    $filter_relevance = filter_input( INPUT_GET, 'filter_relevance', FILTER_SANITIZE_STRING);
+
+    $meta_query = [];
+
+    if ( $search ) {
+        $query->set( 's', $search );
+    }
+
+    if ( $filter_views ) {
+        $meta_query[] = [
+            'key'   => 'Ожидаемое количество просмотров',
+            'value' => $filter_views,
+        ];
+    }
+
+    if ( $filter_relevance ) {
+        $meta_query[] = [
+          'key'   => 'Актуальность записи',
+          'value' => $filter_relevance,
+        ];
+    }
+
+    if ( $meta_query ) {
+        $query->set( 'meta_query', $meta_query );
+    }
+}
+
+add_action( 'pre_get_posts', 'modify_archive_movie_query' );

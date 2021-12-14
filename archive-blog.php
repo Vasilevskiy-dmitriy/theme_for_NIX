@@ -1,10 +1,15 @@
-<?php get_header() ?>
+<?php get_header(); ?>
 
 <main class="container">
+    <div class="row mb-3">
 
-    <div class="row mb-2">
+            <div class="col-md-3">
+                <?php get_template_part('/template-parts/filter/blog-filter') ?>
+            </div>
+
+        <div class="col-md-9">
         <?php while ( have_posts() ): the_post(); ?>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary"><?php the_terms( $post->ID, 'blog' ,  ' ' ); ?></strong>
@@ -20,9 +25,9 @@
                 </div>
             </div>
         <?php endwhile;?>
+        </div>
+
     </div>
-
-
 </main>
 
 <?php get_footer() ?>
