@@ -116,3 +116,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.25rem;
   }
 }
+ul.dropdown-menu.show {
+  background: #212529;
+  border: 1px solid black;
+}

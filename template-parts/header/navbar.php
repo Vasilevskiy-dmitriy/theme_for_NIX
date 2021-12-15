@@ -13,6 +13,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/blog" >Блог</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/movie" >Фильмы</a>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
