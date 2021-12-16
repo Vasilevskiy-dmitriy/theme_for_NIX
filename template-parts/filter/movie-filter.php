@@ -24,7 +24,7 @@
             <option value="60" <?php if( ($_GET['time']) == 60 ) { echo 'selected'; } ?> >До 60</option>
             <option value="90" <?php if( ($_GET['time']) == 90 ) { echo 'selected'; } ?> >До 90</option>
             <option value="120" <?php if( ($_GET['time']) == 120 ) { echo 'selected'; } ?> >До 120</option>
-            <option value="121" <?php if( ($_GET['time']) == 121) { echo 'selected'; } ?> >Больше 120</option>
+            <option value="999" <?php if( ($_GET['time']) == 999) { echo 'selected'; } ?> >Больше 120</option>
         </select>
     </div>
     <div class="mb-3">
