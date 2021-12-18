@@ -37,6 +37,12 @@ return  [
         'render_template' => 'template-parts/ACF_block/slider.php',
         'mode'            => 'edit',
     ],
+    [
+        'name'            => 'improved_render_movies',
+        'title'           => __( 'Improved render movies', THEME_FN_TEXT_DOMAIN ),
+        'render_template' => 'template-parts/ACF_block/improved_render_movies.php',
+        'mode'            => 'edit',
+    ],
 ] ;
 
 
