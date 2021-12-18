@@ -38,7 +38,7 @@ class default_functions_theme
         /**
          * Scripts
          */
-        // wp_enqueue_script('bootstrap_js', get_template_directory_uri() . 'assets/js/bootstrap.bundle.min');
+        wp_enqueue_script('bootstrap_js', get_template_directory_uri() . 'assets/js/bootstrap.bundle.min');
     }
 
     /**

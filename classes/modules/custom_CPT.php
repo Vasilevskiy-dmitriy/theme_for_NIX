@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\modules;
 
-class custom_cpt
+class custom_CPT
 {
     public function __construct(){
         add_action( 'init', [ $this, 'create_post_type' ] );
