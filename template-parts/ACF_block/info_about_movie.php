@@ -4,12 +4,15 @@ $rating_imdb       = get_field( 'rating_imdb' );
 $rating_kinopoiskt = get_field( 'rating_kinopoiskt' );
 $time              = get_field( 'time' );
 $name_film         = get_field( 'name_film' );
+
 ?>
 
 <div class="col-md-8">
     <div class="row">
         <div class="col-md-4">
-            <img width="230px" src="<?php echo ( $image[ 'url' ] ); ?>">
+<!--            <img width="230px" src="--><?php ////echo ( $image[ 'url' ] );?><!--">-->
+            <?php echo wp_get_attachment_image( get_post_thumbnail_id($post->ID), [230]); ?>
+
         </div>
         <div class="col-md-8">
             <h2><?php echo $name_film; ?></h2>

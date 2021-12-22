@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\modules;
 
-class custom_filter_CPT{
+class CustomFilterCPT{
     public function __construct(){
         add_action( 'pre_get_posts', [ $this, 'modify_archive_blog_query' ] );
         add_action( 'pre_get_posts', [ $this, 'modify_archive_movie_query' ] );

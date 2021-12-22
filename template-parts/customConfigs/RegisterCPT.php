@@ -1,18 +1,7 @@
 <?php
 
-namespace theme_for_nix\classes\modules;
-
-class custom_CPT
-{
-    public function __construct(){
-        add_action( 'init', [ $this, 'create_post_type' ] );
-        add_action( 'init', [ $this, 'cpt_movie' ] );
-    }
-
-    /**
-     * CPT blog
-     */
-    public function create_post_type() {
+return [
+    [
         register_post_type( 'blog',
             array(
                 'labels' => array(
@@ -27,13 +16,9 @@ class custom_CPT
                 'menu_icon'   => 'dashicons-welcome-write-blog',
                 'show_in_rest' => true
             )
-        );
-    }
-
-    /**
-     * CPT movie
-     */
-    function cpt_movie() {
+        )
+    ],
+    [
         register_post_type( 'movie',
             array(
                 'labels' => array(
@@ -48,6 +33,6 @@ class custom_CPT
                 'menu_icon'   => 'dashicons-welcome-write-blog',
                 'show_in_rest' => true
             )
-        );
-    }
-}
+        )
+    ]
+];

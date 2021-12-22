@@ -1,18 +1,7 @@
 <?php
 
-namespace theme_for_nix\classes\modules;
-
-class custom_taxonomy
-{
-    public function __construct(){
-        add_action( 'init', [ $this, 'create_taxonomy' ] );
-        add_action( 'init', [ $this, 'categories_movies' ] );
-    }
-
-    /**
-     * Taxonomy for CPT 'blog'
-     */
-    function create_taxonomy(){
+return [
+    [
         register_taxonomy( 'blog', [ 'blog' ], [
             'label'                 => '',
             'labels'                => [
@@ -36,13 +25,9 @@ class custom_taxonomy
             'show_admin_column'     => true,
             'show_in_rest'          => true,
             'rest_base'             => null,
-        ] );
-    }
-
-    /**
-     * Taxonomy for CPT 'movie'
-     */
-    function categories_movies(){
+        ] )
+    ],
+    [
         register_taxonomy( 'categories_movies', [ 'movie' ], [
             'label'                 => '',
             'labels'                => [
@@ -66,6 +51,6 @@ class custom_taxonomy
             'show_admin_column'     => true,
             'show_in_rest'          => true,
             'rest_base'             => null,
-        ] );
-    }
-}
+        ] )
+    ]
+];

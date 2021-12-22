@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\plugin\ACF;
 
-class register_block
+class RegisterBlock
 {
     public function __construct(){
         add_action( 'acf/init', [ $this, 'register_blocks' ] );

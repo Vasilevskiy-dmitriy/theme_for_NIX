@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\theme;
 
-class default_functions_theme
+class DefaultFunctionsTheme
 {
     public function __construct(){
         $this->my_constants();

@@ -4,25 +4,25 @@
  * INCLUDE
  */
 //default
-include 'classes/theme/default_functions_theme.php';
+include 'classes/theme/DefaultFunctionsTheme.php';
 //default
-include 'classes/modules/custom_taxonomy.php';
-include 'classes/modules/custom_CPT.php';
-include 'classes/modules/custom_filter_CPT.php';
+include 'classes/modules/CustomTaxonomy.php';
+include 'classes/modules/CustomCPT.php';
+include 'classes/modules/CustomFilterCPT.php';
 //plugins
-include  'classes/plugin/ACF/register_block.php';
+include  'classes/plugin/ACF/RegisterBlock.php';
 
 /**
  * NEW classes
  */
 //default
-new \theme_for_nix\classes\theme\default_functions_theme();
+new \theme_for_nix\classes\theme\DefaultFunctionsTheme();
 //default
-new \theme_for_nix\classes\modules\custom_taxonomy();
-new \theme_for_Nix\classes\modules\custom_CPT();
-new \theme_for_Nix\classes\modules\custom_filter_CPT();
+new \theme_for_nix\classes\modules\CustomTaxonomy();
+new \theme_for_Nix\classes\modules\CustomCPT();
+new \theme_for_Nix\classes\modules\CustomFilterCPT();
 //plugins
-new \theme_for_nix\classes\plugin\ACF\register_block;
+new \theme_for_nix\classes\plugin\ACF\RegisterBlock;
 
 
 
