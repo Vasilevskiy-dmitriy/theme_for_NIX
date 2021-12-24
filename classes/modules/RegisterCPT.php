@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\modules;
 
-class CustomCPT
+class RegisterCPT
 {
     public function __construct(){
         add_action( 'init', [ $this, 'registerCPT' ] );
@@ -12,12 +12,15 @@ class CustomCPT
         $config = $this->get_config();
 
         foreach ( $config as $CPT ) {
-            return $CPT ;
+            $name = $CPT[ 'name' ];
+            $args = $CPT[ 'args' ];
+
+            register_post_type( $name, $args );
         }
     }
 
     private function get_config(): array {
-        return include get_template_directory() . '/template-parts/customConfigs/RegisterCPT.php';
+        return include get_template_directory() . '/customConfigs/CustomCPT.php';
     }
 
 }

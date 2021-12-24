@@ -2,9 +2,8 @@
 
 return [
     [
-        register_post_type( 'blog',
-            array(
-                'labels' => array(
+        'name' => 'blog',
+        'args'  =>  [     'labels' => array(
                     'name' => __( 'Блоги', THEME_FN_TEXT_DOMAIN ),
                     'singular_name' => __( 'Блог', THEME_FN_TEXT_DOMAIN ),
                     'add_new' => __( 'Добавить блог', THEME_FN_TEXT_DOMAIN ),
@@ -15,12 +14,11 @@ return [
                 'supports' => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
                 'menu_icon'   => 'dashicons-welcome-write-blog',
                 'show_in_rest' => true
-            )
-        )
+            ]
     ],
     [
-        register_post_type( 'movie',
-            array(
+        'name' => 'movie',
+        'args' =>  [
                 'labels' => array(
                     'name' => __( 'Фильмы', THEME_FN_TEXT_DOMAIN ),
                     'singular_name' => __( 'Фильм', THEME_FN_TEXT_DOMAIN ),
@@ -32,7 +30,6 @@ return [
                 'supports' => [ 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'],
                 'menu_icon'   => 'dashicons-welcome-write-blog',
                 'show_in_rest' => true
-            )
-        )
+            ]
     ]
 ];

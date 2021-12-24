@@ -1,3 +1,4 @@
+<?php $image = get_field( 'logo_site', 'option' );?>
 <!DOCTYPE html>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,6 +22,13 @@
                 font-size: 3.5rem;
             }
         }
+        img.logoACF {
+            height: 50px;
+            width: 50px;
+            border-radius: 30px;
+            margin-right: 10px;
+            margin-top: -10px;
+        }
     </style>
     <?php wp_head(); ?>
     <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
@@ -33,9 +41,11 @@
     <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
-                <a class="link-secondary" href="#">Subscribe</a>
+                <a class="link-secondary" href="#"><?php echo get_field( 'phone', 'option' ); ?></a>
+                <a class="link-secondary" href="#"><?php echo get_field( 'email', 'option' ); ?></a>
             </div>
             <div class="col-4 text-center">
+                <?php echo wp_get_attachment_image( $image['ID'], '', '', [ 'class' => 'logoACF' ] ); ?>
                 <a class="blog-header-logo text-dark" href="/"><?php bloginfo( 'name' ); ?></a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">

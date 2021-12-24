@@ -43,6 +43,12 @@ return  [
         'render_template' => 'template-parts/ACF_block/improved_render_movies.php',
         'mode'            => 'edit',
     ],
+    [
+        'name'            => 'popular_from_tmdb',
+        'title'           => __( 'Popular from themoviedb.org', THEME_FN_TEXT_DOMAIN ),
+        'render_template' => 'template-parts/ACF_block/popular-from-tmdb.php',
+        'mode'            => 'edit',
+    ],
 ] ;
 
 

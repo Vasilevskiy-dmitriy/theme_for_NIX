@@ -1,13 +1,14 @@
 <?php
 
-namespace theme_for_nix\classes\plugin\ACF;
+namespace theme_for_nix\classes\modules;
 
-class RegisterBlock
-{
+class RegisterACF {
     public function __construct(){
         add_action( 'acf/init', [ $this, 'register_blocks' ] );
     }
-
+    /**
+     * Blocks ACF
+     */
     public function register_blocks() {
         $config = $this->get_config();
 
@@ -17,7 +18,7 @@ class RegisterBlock
     }
 
     private function get_config(): array {
-        return include get_template_directory() . '/template-parts/ACF_block/00_array_acf_blocks.php';
+        return include get_template_directory() . '/customConfigs/CustomBlocksACF.php';
     }
 
 }

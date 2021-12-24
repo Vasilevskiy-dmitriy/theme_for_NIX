@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\modules;
 
-class CustomTaxonomy
+class RegisterTaxonomy
 {
     public function __construct(){
         add_action( 'init', [ $this, 'registerTaxonomy' ] );
@@ -12,11 +12,15 @@ class CustomTaxonomy
         $config = $this->get_config();
 
         foreach ( $config as $taxonomy ) {
-            return $taxonomy ;
+            $taxonomyName = $taxonomy[ 'taxonomy' ];
+            $object_type = $taxonomy[ 'object_type' ];
+            $args = $taxonomy[ 'args' ];
+
+            register_taxonomy( $taxonomyName, $object_type, $args );
         }
     }
 
     private function get_config(): array {
-        return include get_template_directory() . '/template-parts/customConfigs/RegisterTaxonomy.php';
+        return include get_template_directory() . '/customConfigs/CustomTaxonomy.php';
     }
 }

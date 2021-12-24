@@ -5,24 +5,22 @@
  */
 //default
 include 'classes/theme/DefaultFunctionsTheme.php';
-//default
-include 'classes/modules/CustomTaxonomy.php';
-include 'classes/modules/CustomCPT.php';
+//modules
+include 'classes/modules/RegisterTaxonomy.php';
+include 'classes/modules/RegisterCPT.php';
 include 'classes/modules/CustomFilterCPT.php';
-//plugins
-include  'classes/plugin/ACF/RegisterBlock.php';
+include 'classes/modules/RegisterACF.php';
 
 /**
  * NEW classes
  */
 //default
 new \theme_for_nix\classes\theme\DefaultFunctionsTheme();
-//default
-new \theme_for_nix\classes\modules\CustomTaxonomy();
-new \theme_for_Nix\classes\modules\CustomCPT();
+//modules
+new \theme_for_nix\classes\modules\RegisterTaxonomy();
+new \theme_for_Nix\classes\modules\RegisterCPT();
 new \theme_for_Nix\classes\modules\CustomFilterCPT();
-//plugins
-new \theme_for_nix\classes\plugin\ACF\RegisterBlock;
+new \theme_for_Nix\classes\modules\RegisterACF();
 
 
 

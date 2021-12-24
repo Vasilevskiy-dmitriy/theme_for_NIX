@@ -2,7 +2,9 @@
 
 return [
     [
-        register_taxonomy( 'blog', [ 'blog' ], [
+        'taxonomy' => 'blog',
+        'object_type' => [ 'blog' ],
+        'args' => [
             'label'                 => '',
             'labels'                => [
                 'name'              => __( 'Темы', THEME_FN_TEXT_DOMAIN ),
@@ -25,10 +27,12 @@ return [
             'show_admin_column'     => true,
             'show_in_rest'          => true,
             'rest_base'             => null,
-        ] )
+        ]
     ],
     [
-        register_taxonomy( 'categories_movies', [ 'movie' ], [
+        'taxonomy' => 'categories_movies',
+        'object_type' => [ 'movie' ],
+        'args' => [
             'label'                 => '',
             'labels'                => [
                 'name'              => __( 'Категории', THEME_FN_TEXT_DOMAIN ),
@@ -51,6 +55,6 @@ return [
             'show_admin_column'     => true,
             'show_in_rest'          => true,
             'rest_base'             => null,
-        ] )
+        ]
     ]
 ];
