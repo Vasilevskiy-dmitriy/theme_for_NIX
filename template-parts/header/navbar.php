@@ -20,8 +20,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                        <?php wp_nav_menu(['items_wrap' => '%3$s']); ?>
-                        <!--                            <li><a class="dropdown-item" href="#">Action</a></li>-->
+                        <?php wp_nav_menu([ 'items_wrap' => '%3$s' ]); ?>
                     </ul>
                 </li>
 

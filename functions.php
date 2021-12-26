@@ -3,16 +3,25 @@
 /**
  * INCLUDE
  */
-include 'classes/theme/default_functions_theme.php';
-include 'classes/modules/custom_taxonomy.php';
-include 'classes/modules/custom_cpt.php';
-include 'classes/modules/custom_filter_cpt.php';
+//default
+include 'classes/theme/DefaultFunctionsTheme.php';
+//modules
+include 'classes/modules/RegisterTaxonomy.php';
+include 'classes/modules/RegisterCPT.php';
+include 'classes/modules/CustomFilterCPT.php';
+include 'classes/modules/RegisterACF.php';
 
 /**
  * NEW classes
  */
-new \theme_for_nix\classes\theme\default_functions_theme();
-new \theme_for_nix\classes\modules\custom_taxonomy();
-new \theme_for_Nix\classes\modules\custom_cpt();
-new \theme_for_Nix\classes\modules\custom_filter_cpt();
+//default
+new \theme_for_nix\classes\theme\DefaultFunctionsTheme();
+//modules
+new \theme_for_nix\classes\modules\RegisterTaxonomy();
+new \theme_for_Nix\classes\modules\RegisterCPT();
+new \theme_for_Nix\classes\modules\CustomFilterCPT();
+new \theme_for_Nix\classes\modules\RegisterACF();
+
+
+
 

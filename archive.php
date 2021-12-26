@@ -9,7 +9,7 @@
                     <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary"><?php the_category("\n"); ?></strong>
                         <h3 class="mb-0"><?php the_title(); ?></h3>
-                        <div class="mb-1 text-muted"><?php the_time('M d'); ?></div>
+                        <div class="mb-1 text-muted"><?php the_time('M d' ); ?></div>
                         <p class="card-text mb-auto"><?php the_excerpt(); ?></p>
                         <h1></h1>
                         <a href="<?php the_permalink(); ?>" class="stretched-link">Continue reading</a>
@@ -21,7 +21,6 @@
             </div>
         <?php endwhile;?>
     </div>
-
 
 </main>
 

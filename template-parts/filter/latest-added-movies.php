@@ -6,15 +6,20 @@ $latest_added = get_posts( [
 ] );
 ?>
 
-<div class="p-4 bg-light rounded">
+<style>
+    <?php include 'style_filter.css';?>
+</style>
+
+<div class="p-4 rounded">
     <h4 class="fst-italic"><?php echo __( 'Последние фильмы:', THEME_FN_TEXT_DOMAIN ); ?></h4>
-    <ol class="list-unstyled mb-0">
+    <div class="list-unstyled mb-0">
         <?php foreach ( $latest_added as $blog ): ?>
-            <li>
-                <a href="<?php echo get_permalink( $blog ); ?>">
+            <div class="row-title">
+                <a class="link_movie" href="<?php echo get_permalink( $blog ); ?>">
                     <?php echo get_the_title( $blog ); ?>
                 </a>
-            </li>
+                <?php echo get_the_post_thumbnail( $blog, 'large', [ 'class' => 'img_last' ]  );?>
+            </div>
         <?php endforeach; ?>
     </ol>
 </div>

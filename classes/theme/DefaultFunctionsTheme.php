@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\theme;
 
-class default_functions_theme
+class DefaultFunctionsTheme
 {
     public function __construct(){
         $this->my_constants();
@@ -38,7 +38,7 @@ class default_functions_theme
         /**
          * Scripts
          */
-        // wp_enqueue_script('bootstrap_js', get_template_directory_uri() . 'assets/js/bootstrap.bundle.min');
+        wp_enqueue_script('bootstrap_js', get_template_directory_uri() . 'assets/js/bootstrap.bundle.min');
     }
 
     /**
@@ -47,4 +47,5 @@ class default_functions_theme
     public function theme_register_nav_menu() {
         register_nav_menu( 'primary', 'Primary Menu' );
     }
+
 }

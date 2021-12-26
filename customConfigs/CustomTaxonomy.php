@@ -1,19 +1,10 @@
 <?php
 
-namespace theme_for_nix\classes\modules;
-
-class custom_taxonomy
-{
-    public function __construct(){
-        add_action( 'init', [ $this, 'create_taxonomy' ] );
-        add_action( 'init', [ $this, 'categories_movies' ] );
-    }
-
-    /**
-     * Taxonomy for CPT 'blog'
-     */
-    function create_taxonomy(){
-        register_taxonomy( 'blog', [ 'blog' ], [
+return [
+    [
+        'taxonomy' => 'blog',
+        'object_type' => [ 'blog' ],
+        'args' => [
             'label'                 => '',
             'labels'                => [
                 'name'              => __( 'Темы', THEME_FN_TEXT_DOMAIN ),
@@ -27,24 +18,21 @@ class custom_taxonomy
                 'new_item_name'     => __( 'Новое имя темы', THEME_FN_TEXT_DOMAIN ),
                 'back_to_items'     => __( '← Нахад к темам', THEME_FN_TEXT_DOMAIN ),
             ],
-            'description'           => '', // описание таксономии
+            'description'           => '',
             'public'                => true,
             'hierarchical'          => true,
             'rewrite'               => true,
             'capabilities'          => array(),
             'meta_box_cb'           => 'post_categories_meta_box',
-            'show_admin_column'     => true, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
-            'show_in_rest'          => null, // добавить в REST API
+            'show_admin_column'     => true,
+            'show_in_rest'          => true,
             'rest_base'             => null,
-
-        ] );
-    }
-
-    /**
-     * Taxonomy for CPT 'movie'
-     */
-    function categories_movies(){
-        register_taxonomy( 'categories_movies', [ 'movie' ], [
+        ]
+    ],
+    [
+        'taxonomy' => 'categories_movies',
+        'object_type' => [ 'movie' ],
+        'args' => [
             'label'                 => '',
             'labels'                => [
                 'name'              => __( 'Категории', THEME_FN_TEXT_DOMAIN ),
@@ -58,16 +46,15 @@ class custom_taxonomy
                 'new_item_name'     => __( 'Новое имя категории', THEME_FN_TEXT_DOMAIN ),
                 'back_to_items'     => __( '← Нахад к категориям', THEME_FN_TEXT_DOMAIN ),
             ],
-            'description'           => '', // описание таксономии
+            'description'           => '',
             'public'                => true,
             'hierarchical'          => true,
             'rewrite'               => true,
             'capabilities'          => array(),
             'meta_box_cb'           => 'post_categories_meta_box',
-            'show_admin_column'     => true, // авто-создание колонки таксы в таблице ассоциированного типа записи. (с версии 3.5)
-            'show_in_rest'          => true, // добавить в REST API
+            'show_admin_column'     => true,
+            'show_in_rest'          => true,
             'rest_base'             => null,
-
-        ] );
-    }
-}
+        ]
+    ]
+];
