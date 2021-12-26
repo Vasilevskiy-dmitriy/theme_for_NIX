@@ -5,10 +5,6 @@ $args = array( 'post_type' => "movie", 'posts_per_page' => "$quantity_movies" );
 $the_query = new WP_Query( $args );
 ?>
 
-<style>
-    <?php include 'style_imp_rend_mov.css';?>
-</style>
-
 <div class="container px-4 mb-5" id="custom-cards">
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4">
         <?php while ( $the_query->have_posts() ) : $the_query->the_post();?>
