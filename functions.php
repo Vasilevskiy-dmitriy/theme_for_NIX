@@ -11,6 +11,8 @@ include 'classes/modules/RegisterCPT.php';
 include 'classes/modules/CustomFilterCPT.php';
 include 'classes/modules/RegisterACF.php';
 include 'classes/modules/Likes.php';
+include 'classes/modules/TMDB_API.php';
+include 'classes/modules/Football_data_API.php';
 
 /**
  * NEW classes
@@ -23,4 +25,3 @@ new \theme_for_Nix\classes\modules\RegisterCPT();
 new \theme_for_Nix\classes\modules\CustomFilterCPT();
 new \theme_for_Nix\classes\modules\RegisterACF();
 new \theme_for_Nix\classes\modules\Likes();
-
