@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div class="container">
-    <div class="row py-5">
-        <div class="col-md-10">
+    <div class="container">
+        <div class="row py-5">
+            <?php echo get_template_part( 'template-parts/single/likes' ); ?>
             <?php the_content(); ?>
         </div>
         <div class="col-md-2">
@@ -11,6 +11,5 @@
             </div>
         </div>
     </div>
-</div>
 
 <?php get_footer(); ?>

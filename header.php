@@ -48,9 +48,13 @@
                 <?php echo wp_get_attachment_image( $image['ID'], '', '', [ 'class' => 'logoACF' ] ); ?>
                 <a class="blog-header-logo text-dark" href="/"><?php bloginfo( 'name' ); ?></a>
             </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-            </div>
+            <?php if(is_user_logged_in()): ?>
+                <?php echo '<div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="btn btn-sm btn-outline-secondary" href="http://localhost/wp-login.php?action=logout">Выйти</a></div>';?>
+            <?php else: ?>
+                <?php echo '<div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="btn btn-sm btn-outline-secondary" href="/wp-login.php">Войти</a></div>'; ?>
+            <?php endif; ?>
         </div>
     </header>
     <?php get_template_part( '/template-parts/header/navbar' ) ?>

@@ -58,6 +58,12 @@ return  [
         'mode'            => 'edit',
 //        'enqueue_style'   => get_template_directory_uri() . '/assets/css/render_tmdb.css',
     ],
+    [
+        'name'            => 'likes_movie',
+        'title'           => __( 'Likes movie', THEME_FN_TEXT_DOMAIN ),
+        'render_template' => 'template-parts/ACF_block/likes_movie.php',
+        'mode'            => 'edit',
+    ],
 ] ;
 
 

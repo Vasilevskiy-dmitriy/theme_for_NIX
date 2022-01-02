@@ -16,6 +16,9 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/movie" >Фильмы</a>
                 </li>
+              <li class="nav-item">
+                    <a class="nav-link active" href="/likes" >Понравившиеся фильмы</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="/lc" >ЛИГА ЧЕМПИОНОВ</a>
                 </li>
