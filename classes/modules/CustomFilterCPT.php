@@ -2,7 +2,7 @@
 
 namespace theme_for_nix\classes\modules;
 
-class custom_filter_cpt{
+class CustomFilterCPT{
     public function __construct(){
         add_action( 'pre_get_posts', [ $this, 'modify_archive_blog_query' ] );
         add_action( 'pre_get_posts', [ $this, 'modify_archive_movie_query' ] );
@@ -49,7 +49,7 @@ class custom_filter_cpt{
 /**
 * Filrer for movie
 */
-    function modify_archive_movie_query( \WP_Query $query ) {
+    public function modify_archive_movie_query( \WP_Query $query ) {
         if ( is_admin() || ! $query->is_post_type_archive( 'movie' ) || ! $query->is_main_query() ) {
             return;
         }

@@ -16,12 +16,19 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/movie" >Фильмы</a>
                 </li>
-
+              <li class="nav-item">
+                    <a class="nav-link active" href="/likes" >Понравившиеся фильмы</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/lc" >ЛИГА ЧЕМПИОНОВ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/film-tmdb" >Рейтинг фильмов TMDB</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Категории</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                        <?php wp_nav_menu(['items_wrap' => '%3$s']); ?>
-                        <!--                            <li><a class="dropdown-item" href="#">Action</a></li>-->
+                        <?php wp_nav_menu([ 'items_wrap' => '%3$s' ]); ?>
                     </ul>
                 </li>
 

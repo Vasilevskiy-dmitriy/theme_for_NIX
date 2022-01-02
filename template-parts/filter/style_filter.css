@@ -1,0 +1,25 @@
+.row-title {
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    text-align: center;
+}
+.link_movie{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+}
+.p-4.rounded {
+    background: #212529;
+}
+h4.fst-italic {
+    color: white;
+    text-align: center;
+}
+.img_last{
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
