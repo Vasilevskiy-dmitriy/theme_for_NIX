@@ -49,7 +49,7 @@ class CustomFilterCPT{
 /**
 * Filrer for movie
 */
-    function modify_archive_movie_query( \WP_Query $query ) {
+    public function modify_archive_movie_query( \WP_Query $query ) {
         if ( is_admin() || ! $query->is_post_type_archive( 'movie' ) || ! $query->is_main_query() ) {
             return;
         }

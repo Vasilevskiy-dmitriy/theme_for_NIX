@@ -50,6 +50,12 @@ return  [
         'render_template' => 'template-parts/ACF_block/popular-from-tmdb.php',
         'mode'            => 'edit',
     ],
+    [
+        'name'            => 'likes_movie',
+        'title'           => __( 'Likes movie', THEME_FN_TEXT_DOMAIN ),
+        'render_template' => 'template-parts/ACF_block/likes_movie.php',
+        'mode'            => 'edit',
+    ],
 ] ;
 
 
