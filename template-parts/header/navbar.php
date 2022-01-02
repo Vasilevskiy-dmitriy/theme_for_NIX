@@ -16,9 +16,11 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/movie" >Фильмы</a>
                 </li>
-              <li class="nav-item">
+                <?php if( is_user_logged_in() ): ?>
+                <li class="nav-item">
                     <a class="nav-link active" href="/likes" >Понравившиеся фильмы</a>
                 </li>
+                <?php endif; ?>
                 <li class="nav-item">
                     <a class="nav-link active" href="/lc" >ЛИГА ЧЕМПИОНОВ</a>
                 </li>
